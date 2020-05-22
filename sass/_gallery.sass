@@ -1,0 +1,82 @@
+// общие стили
+.gallery
+	padding: 139px 0 0 0
+	background: $charcoal-grey
+	text-align: center
+	@media (max-width: $md2)
+		padding: 50px 0 0 0
+	// заголовок секции
+	&__title
+		font-family: $font-three
+		font-size: 39px
+		font-weight: 400
+		line-height: 1.38
+		color: $white
+	// описание секции
+	&__description
+		font-weight: 400
+		line-height: 1.56
+		text-align: center
+		color: $white
+		margin: 60px auto 0
+		max-width: 652px
+		@media (max-width: $md2)
+			margin: 30px auto 0
+	// кнопка перехода
+	&__btn
+		margin: 220px 0 0 0
+		line-height: 1.22
+		background: $tomato
+		padding: 50px 0
+		@media (max-width: $md2)
+			margin: 120px 0 0 0
+			padding: 20px 0
+		& a
+			color: hsl(0, 0%, 100%)
+			position: relative
+			& span::after
+				content: ""
+				display: block
+				width: 0
+				height: 2px
+				position: absolute
+				left: 50%
+				bottom: -6px
+				background: hsl(0, 0%, 100%)
+				transition: all .3s
+				z-index: 5
+			&:hover span::after
+				width: 100%
+				left: 0
+// слайдер
+.gallery-slider
+	margin: 55px 0 0 0
+	min-width: 0
+	position: relative
+	& .slick-list
+		overflow: hidden
+		width: 100%
+	& .slick-track
+		display: flex
+		justify-content: center
+		width: 100%
+		overflow: hidden
+		position: relative
+	& .slick-dots
+		position: absolute
+		bottom: -58px
+	& .slick-dots li button
+		font-size: 0
+		width: 11px
+		height: 11px
+		border-radius: 50%
+		background: $dark-grey
+	& .slick-dots li.slick-active button
+		background: hsl(0, 0%, 100%)
+	&__item
+		max-width: 963px
+		margin: 0 auto
+		& img
+			object-fit: cover
+			width: 100%
+			height: 100%

@@ -1,0 +1,100 @@
+.blog
+	padding: 115px 0 40px
+	@media (max-width: $md2)
+		padding: 50px 0 40px
+// блок с заголовком секции и описанием
+.blog-top
+	display: flex
+	@media (max-width: $md2)
+		flex-wrap: wrap
+	&__column
+		width: 50%
+		@media (max-width: $md2)
+			width: 100%
+			margin: 0 0 30px 0
+	&__title
+		margin: 0 0 29px 0
+		@media (max-width: $md4)
+			font-size: 36px
+	&__description
+		max-width: 430px
+		@media (max-width: $md2)
+			max-width: 100%
+// блок со статьями
+.blog-content
+	margin: 100px 0 0 0
+	text-align: center
+	@media (max-width: $md2)
+		margin: 20px 0 0 0
+	// ссылка на все статьи
+	&__btn
+		font-family: $font-three
+		font-size: 14px
+		font-weight: 400
+		color: $tomato-two
+		margin: 40px auto 0
+		position: relative
+		// динамичная линия при наведении
+		& span::after
+			content: ""
+			width: 0
+			height: 2px
+			background: $tomato-two
+			position: absolute
+			left: 50%
+			bottom: -5px
+			transition: all .3s
+		&:hover span::after
+			width: 100%
+			left: 0
+// таблица со статьями
+.blog-content-table
+	max-width: 100%
+	text-align: left
+	border-collapse: collapse
+	&__wrap // обертка для таблицы
+		overflow: auto
+	& th
+		font-weight: 300
+		color: $warm-grey-two
+		text-transform: uppercase
+		padding: 20px 0
+	& td,
+	& th
+		border-bottom: 1px solid $white-two
+		vertical-align: top
+		@media (max-width: $md2)
+			min-width: 200px
+	& td
+		padding: 40px 30px 40px 0
+		width: 25%
+		@media (max-width: $md2)
+			min-width: 200px
+			padding: 20px 10px 20px 0
+	& tr td:first-child
+		width: 55%
+		padding-left: 30px
+		@media (max-width: $md2)
+			min-width: 250px
+			padding-left: 0
+	&__link
+		font-weight: 300
+		color: $black-four
+		text-transform: uppercase
+		&:hover
+			text-decoration: underline
+	&__title
+		margin: 0 0 35px 0
+	&__description
+		font-size: 16px
+		line-height: 1.56
+		color: $warm-grey
+		max-width: 595px
+	& tr
+		transition: all .5s
+	& tr:hover
+		background: $tomato-two
+		& .blog-content-table__link,
+		& .blog-content-table__description,
+		& th
+			color: hsl(0, 0%, 100%)

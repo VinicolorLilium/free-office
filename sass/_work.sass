@@ -1,0 +1,159 @@
+.work
+	&__header
+		padding: 121px 0 118px
+// топовая часть секции с названием секции и описанием
+.work-header
+	&__body
+		display: flex
+		@media (max-width: $md3)
+			flex-wrap: wrap
+	&__column
+		width: 50%
+		@media (max-width: $md3)
+			width: 100%
+	&__title
+		margin: 0 0 25px 0
+	&__description
+		line-height: 1.44
+		margin: 10px 0 0 0
+// =================================================
+// блок с работами
+.work
+	&__project
+		background: $charcoal-grey
+		padding: 244px 0 205px
+		overflow: hidden
+		@media (max-width: $md1)
+			padding: 100px 0
+		@media (max-width: $md4)
+			padding: 50px 0 10px
+.work-project
+	&__conteiner
+		display: flex
+		align-items: center
+		margin: 0 -25px
+		@media (max-width: 1400px)
+			margin: 0
+		@media (max-width: $md1)
+			flex-direction: column
+	&__column
+		width: calc(50% - 50px)
+		margin: 0 25px
+		@media (max-width: 1400px)
+			margin: 0
+		@media (max-width: $md1)
+			width: 100%
+			margin: 0 0 40px 0
+			text-align: center
+	&__title
+		margin: 0 0 17px 0
+		@media (max-width: $md4)
+			font-size: 48px
+	& .page-line
+		@media (max-width: $md1)
+			margin: 0 auto
+	&__description
+		margin: 55px 0 0 0
+		color: hsl(0, 0%, 100%)
+		max-width: 404px
+		@media (max-width: $md1)
+			max-width: 100%
+	&__btn
+		font-size: 14px
+		font-weight: 600
+		letter-spacing: 1.05px
+		color: hsl(0, 0%, 100%)
+		padding: 20px 30px
+		border: 2px solid hsl(0, 0%, 100%)
+		margin: 72px 0 0 0
+		text-transform: uppercase
+		transition: all .3s
+		&:hover
+			background: hsl(0, 0%, 100%)
+			color: $charcoal-grey
+// =======================================
+// слайдер
+.work-project-slider
+	min-width: 0
+	position: relative
+	& .slick-list
+		overflow: hidden
+		width: 100%
+	& .slick-track
+		display: flex
+		justify-content: center
+		width: 100%
+		overflow: hidden
+		position: relative
+	& .slick-dots
+		display: flex
+		flex-direction: column
+		left: 105%
+		top: 30%
+		@media (max-width: 1400px)
+			left: 100%
+		@media (max-width: $md1)
+			flex-direction: row
+			left: 0
+			top: 100%
+			justify-content: center
+	& .slick-dots li button
+		width: 3px
+		height: 25px
+		background: hsl(0, 0%, 100%)
+		opacity: 0.2
+		border: none
+		padding: 0
+		@media (max-width: $md1)
+			width: 25px
+			height: 3px
+	& .slick-dots li
+		margin: 0 0 10px 0
+		@media (max-width: $md1)
+			margin: 0 10px 0 0
+		&:last-child
+			margin: 0
+	& .slick-dots li.slick-active button
+		opacity: 1
+// ==============================================
+// вкладки
+.tabs
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+.tab-pane
+	display: none
+	opacity: 0
+	transition: 0.5s
+	max-width: 550px
+	margin: 0 auto
+	& img
+		width: 100%
+		height: 100%
+		object-fit: cover
+.in
+	opacity: 1
+	transition: 0.5s
+.active
+	display: block
+.tab-nav
+	margin: 80px 0 0 0
+	& ul
+		display: flex
+		justify-content: center
+	& li
+		margin: 0 20px
+	& li a::before
+		font-family: 'icomoon'
+		font-size: 46px
+		color: hsl(0, 0%, 100%)
+		opacity: 0.2
+	& li a.active::before
+		opacity: 1
+	& li:nth-child(1) a::before
+		content: "\f10b"
+	& li:nth-child(2) a::before
+		content: "\f10a"
+	& li:nth-child(3) a::before
+		content: "\f109"

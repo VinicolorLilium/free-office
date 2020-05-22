@@ -1,0 +1,117 @@
+//===============================================================
+//подключение шрифтов и цветов
+//===============================================================
+@import "_font.sass"
+@import "_colors.sass"
+//===============================================================
+//базовые переменные
+//===============================================================
+$font-one: 'Open Sans', sans-serif
+$font-two: 'GothamRounded', sans-serif
+$font-three: 'Merriweather', sans-serif
+$basik-font-size: 18px
+$basik-color: $warm-grey
+$basik-font-family: $font-one
+
+//===============================================================
+// брейкпоинты
+//===============================================================
+$mw: 1255px
+$md1: 1024px
+$md2: 768px
+$md3: 600px
+$md4: 425px
+$md5: 320px
+//===============================================================
+// базовые стили
+//===============================================================
+body
+	font-size: $basik-font-size
+	box-sizing: border-box
+	color: $basik-color
+	line-height: 1.2
+	font-family: $basik-font-family
+	height: 100vh /*занимает всю высоту видимой обласи*/
+	display: flex /*задание флекса позволяет прижать подвал к низу экрана*/
+	flex-direction: column
+	justify-content: space-between
+header
+	flex: 0 0 auto
+main
+	flex: 1 0 auto
+
+footer
+	flex: 0 0 auto
+
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	padding: 0
+	margin: 0
+
+ul
+	list-style: none
+
+a
+	display: inline-block
+	text-decoration: none
+
+.wrap
+	max-width: $mw
+	margin: 0 auto
+	padding: 0 20px
+// класс, делающий обычную картинку фоновой
+.ibg
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+	position: relative
+.ibg img
+	width: 0
+	height: 0
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+	visibility: hidden
+
+.page-line
+	width: 20px
+	height: 1px
+	&--01
+		background: hsl(0, 0%, 100%)
+	&--02
+		background: $black-four
+
+.wrap-big
+	max-width: 1920px
+	margin: 0 auto
+	padding: 0 0 0 353px
+	@media (max-width: 1920px)
+		max-width: $mw
+		padding: 0 20px
+
+.page-title
+	font-size: 53px
+	font-weight: 700
+	letter-spacing: 0.53px
+	text-transform: uppercase
+	&--01
+		color: $black-four
+	&--02
+		color: hsl(0, 0%, 100%)
+//===============================================================
+// импорт стилей
+//===============================================================
+@import "_header.sass"
+@import "_services.sass"
+@import "_work.sass"
+@import "_blog.sass"
+@import "_team.sass"
+@import "_gallery.sass"
+@import "_footer.sass"
+//===============================================================
+// проверка поддержки CSS Grid сетки
+//===============================================================
+@supports (display:grid)

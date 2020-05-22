@@ -1,0 +1,103 @@
+.services
+	padding: 172px 0 160px
+	background: $white
+	@media (max-width: 1920px)
+		padding: 172px 0 110px
+	@media (max-width: $md2)
+		padding: 100px 0 30px
+	&__body
+		display: flex
+		align-items: center
+		@media (max-width: 1920px)
+			flex-wrap: wrap
+	&__column
+		width: 100%
+		margin: 0 0 50px 0
+	&__title
+		margin: 0 0 25px 0
+	&__description
+		margin: 55px 0 0 0
+		max-width: 400px
+		@media (max-width: $md2)
+			max-width: 100%
+	// секция с услугами
+	&__galery
+		// персональные стили для ромбовидной галереи для секции с услугами
+		& .rhombus-galery__item
+			@media (max-width: 951px)
+				clip-path: none
+				width: 200px
+				height: 200px
+				margin: 5px
+			@media (max-width: $md3)
+				width: 100%
+				height: 60px
+	// ссылка на услуги помещенна в карточку ромбовидной галереи
+	&__link
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: 100%
+		text-align: center
+		font-size: 14px
+		font-weight: 600
+		line-height: 1.29
+		color: $greyish-brown
+		text-transform: uppercase
+		background: hsl(0, 0%, 100%)
+		transition: all .3s
+		@media (max-width: $md3)
+			flex-direction: row
+			justify-content: flex-start
+			padding: 0 0 0 15px
+			text-align: left
+
+		&:hover
+			background: $charcoal-grey
+			color: hsl(0, 0%, 100%)
+	// иконка услуги
+	&__icon
+		width: 32px
+		height: 32px
+		margin: 0 0 10px 0
+		@media (max-width: $md3)
+			margin: 0 5px 0 0
+		& img
+			object-fit: cover
+	// название услуги
+	& span
+		max-width: 230px
+		@media (max-width: $md3)
+			max-width: 100%
+// стили для ромбовидной галереии
+.rhombus-galery
+	// в каждой строке по три блока
+	&__row
+		display: flex
+		@media (max-width: 951px)
+			flex-wrap: wrap
+			justify-content: center
+			align-items: center
+		&--01
+			margin: 0 0 0 260px
+			@media (max-width: 1100px)
+				margin: 0
+			@media (max-width: 951px)
+				margin: 0
+		&--02
+			margin: -120px 0 0 130px
+			@media (max-width: 951px)
+				margin: 0
+		&--03
+			margin: -120px 0 0 0
+			@media (max-width: 951px)
+				margin: 0
+	// блок галереии
+	&__item
+		width: 250px
+		height: 250px
+		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+		overflow: hidden
+		margin: 0 5px 0
